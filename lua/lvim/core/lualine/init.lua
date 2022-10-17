@@ -12,7 +12,7 @@ M.config = function()
       globalstatus = false,
     },
     sections = {
-      lualine_a = nil,
+      lualine_a = { 'mode' },
       lualine_b = nil,
       lualine_c = nil,
       lualine_x = nil,

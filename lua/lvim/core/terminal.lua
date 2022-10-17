@@ -40,7 +40,10 @@ M.config = function()
     -- lvim.builtin.terminal.execs = {{}} to overwrite
     -- lvim.builtin.terminal.execs[#lvim.builtin.terminal.execs+1] = {"gdb", "tg", "GNU Debugger"}
     execs = {
-      { "lazygit", "<leader>gg", "LazyGit", "float" },
+      { "lazygit", "<C-g>", "LazyGit", "float" },
+      { vim.o.shell, "<M-1>", "Horizontal Terminal", "horizontal", 10 },
+      { vim.o.shell, "<M-2>", "Vertical Terminal", "vertical", 60 },
+      { vim.o.shell, "<M-3>", "Float Terminal", "float", nil },
     },
   }
 end

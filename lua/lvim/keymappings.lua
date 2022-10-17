@@ -3,6 +3,10 @@ local Log = require "lvim.core.log"
 
 local generic_opts_any = { noremap = true, silent = true }
 
+vim.cmd([[
+map <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
+]])
+
 local generic_opts = {
   insert_mode = generic_opts_any,
   normal_mode = generic_opts_any,
@@ -28,15 +32,18 @@ local mode_adapters = {
 ---@field visual_mode table
 ---@field visual_block_mode table
 ---@field command_mode table
+vim.cmd [[
+noremap <up> :res +5<CR>
+noremap <down> :res -5<CR>
+noremap <left> :vertical resize-5<CR>
+noremap <right> :vertical resize+5<CR>
+]]
 
 local defaults = {
   insert_mode = {
     -- 'jk' for quitting insert mode
     ["jk"] = "<ESC>",
     -- 'kj' for quitting insert mode
-    ["kj"] = "<ESC>",
-    -- 'jj' for quitting insert mode
-    ["jj"] = "<ESC>",
     -- Move current line / block with Alt-j/k ala vscode.
     ["<A-j>"] = "<Esc>:m .+1<CR>==gi",
     -- Move current line / block with Alt-j/k ala vscode.
@@ -49,11 +56,21 @@ local defaults = {
   },
 
   normal_mode = {
+    ["R"] = ":Ranger<CR>",
+    ["J"] = "5j",
+    ["K"] = "5k",
+    ["<C-p>"] = ":Telescope find_files<CR>",
+    ["<C-r>"] = ":Telescope projects<CR>",
+    ["<C-b>"] = ":Telescope buffers<CR>",
+    ["<C-h>"] = ":Telescope oldfiles<CR>",
+    ["<C-f>"] = ":Telescope live_grep<CR>",
+    ["<TAB>"] = ":BufferLineCyclePrev<CR>",
+    ["<S-TAB>"] = ":BufferLineCycleNext<CR>",
     -- Better window movement
-    ["<C-h>"] = "<C-w>h",
+    --[[ ["<C-h>"] = "<C-w>h",
     ["<C-j>"] = "<C-w>j",
     ["<C-k>"] = "<C-w>k",
-    ["<C-l>"] = "<C-w>l",
+    ["<C-l>"] = "<C-w>l", ]]
 
     -- Resize with arrows
     ["<C-Up>"] = ":resize -2<CR>",

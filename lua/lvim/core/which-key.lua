@@ -24,7 +24,7 @@ M.config = function()
       icons = {
         breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
         separator = "➜", -- symbol used between a key and it's label
-        group = "+", -- symbol prepended to a group
+        -- group = "+", -- symbol prepended to a group
       },
       popup_mappings = {
         scroll_down = "<c-d>", -- binding to scroll down inside the popup
@@ -86,8 +86,11 @@ M.config = function()
       ["c"] = { "<cmd>BufferKill<CR>", "Close Buffer" },
       ["f"] = { require("lvim.core.telescope.custom-finders").find_project_files, "Find File" },
       ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
+      ["P"] = { "<cmd>Telescope project", "打开最近项目" },
       b = {
         name = "Buffers",
+        a = { "<cmd>Telescope vim_bookmarks all<cr>", "显示所有书签" },
+        c = { "<cmd>Telescope vim_bookmarks current_file<cr>", "显示当前文件书签" },
         j = { "<cmd>BufferLinePick<cr>", "Jump" },
         f = { "<cmd>Telescope buffers<cr>", "Find" },
         b = { "<cmd>BufferLineCyclePrev<cr>", "Previous" },
@@ -101,6 +104,10 @@ M.config = function()
         l = {
           "<cmd>BufferLineCloseRight<cr>",
           "Close all to the right",
+        },
+        o = {
+          "<cmd>BufferLineCloseLeft<cr><cmd>BufferLineCloseRight<cr>",
+          "关闭其他标签"
         },
         D = {
           "<cmd>BufferLineSortByDirectory<cr>",
@@ -163,11 +170,11 @@ M.config = function()
         I = { "<cmd>Mason<cr>", "Mason Info" },
         j = {
           vim.diagnostic.goto_next,
-          "Next Diagnostic",
+          "跳到下一个错误",
         },
         k = {
           vim.diagnostic.goto_prev,
-          "Prev Diagnostic",
+          "跳到上一个错误",
         },
         l = { vim.lsp.codelens.run, "CodeLens Action" },
         p = {
@@ -186,7 +193,7 @@ M.config = function()
         e = { "<cmd>Telescope quickfix<cr>", "Telescope Quickfix" },
       },
       L = {
-        name = "+LunarVim",
+        name = "LunarVim",
         c = {
           "<cmd>edit " .. get_config_dir() .. "/config.lua<cr>",
           "Edit config.lua",
@@ -209,7 +216,7 @@ M.config = function()
           "View LunarVim's changelog",
         },
         l = {
-          name = "+logs",
+          name = "logs",
           d = {
             "<cmd>lua require('lvim.core.terminal').toggle_log_view(require('lvim.core.log').get_path())<cr>",
             "view default log",
@@ -239,7 +246,7 @@ M.config = function()
         u = { "<cmd>LvimUpdate<cr>", "Update LunarVim" },
       },
       s = {
-        name = "Search",
+        name = "搜索",
         b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
         c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
         f = { "<cmd>Telescope find_files<cr>", "Find File" },

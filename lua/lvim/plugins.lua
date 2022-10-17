@@ -14,6 +14,7 @@ local core_plugins = {
       require("lvim.core.mason").setup()
     end,
   },
+  -- theme
   {
     "lunarvim/onedarker.nvim",
     branch = "freeze",
@@ -26,6 +27,9 @@ local core_plugins = {
       end)
     end,
     disable = lvim.colorscheme ~= "onedarker",
+  },
+  {
+    "arcticicestudio/nord-vim"
   },
   {
     "rcarriga/nvim-notify",
@@ -249,6 +253,55 @@ local core_plugins = {
   {
     "b0o/schemastore.nvim",
   },
+  --vim-surround
+  {
+    "tpope/vim-surround"
+  },
+  -- ranger
+  {
+    'francoiscabrol/ranger.vim'
+  },
+  {
+    'rbgrouleff/bclose.vim'
+  },
+  -- 多光标
+  {
+    "mg979/vim-visual-multi"
+  },
+  --书签
+  {
+    "tom-anders/telescope-vim-bookmarks.nvim"
+  },
+  {
+    "MattesGroeger/vim-bookmarks"
+  },
+  --tokyoning
+  {
+    "folke/tokyonight.nvim",
+  },
+  -- 自动保存自动加载
+  --[[ {
+    "djoshea/vim-autoread"
+  },
+  {
+    "Pocco81/AutoSave.nvim"
+  }, ]]
+  -- 自动引入
+  {
+    'billyvg/jsimport.nvim'
+  },
+  {
+    'billyvg/node-host'
+  },
+  --snippets
+  {
+    'hrsh7th/vim-vsnip'
+  },
+  {
+    'hrsh7th/vim-vsnip-integ'
+  },
+
+
 }
 
 local default_snapshot_path = join_paths(get_lvim_base_dir(), "snapshots", "default.json")

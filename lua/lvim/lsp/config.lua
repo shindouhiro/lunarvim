@@ -94,7 +94,7 @@ return {
   },
   buffer_mappings = {
     normal_mode = {
-      ["K"] = { vim.lsp.buf.hover, "Show hover" },
+      ["H"] = { vim.lsp.buf.hover, "Show hover" },
       ["gd"] = { vim.lsp.buf.definition, "Goto Definition" },
       ["gD"] = { vim.lsp.buf.declaration, "Goto declaration" },
       ["gr"] = { vim.lsp.buf.references, "Goto references" },
@@ -106,6 +106,9 @@ return {
         end,
         "Peek definition",
       },
+      [";j"] = { vim.diagnostic.goto_next },
+      [";k"] = { vim.diagnostic.goto_prev },
+
       ["gl"] = {
         function()
           local config = lvim.lsp.diagnostics.float
