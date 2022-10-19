@@ -295,6 +295,9 @@ local core_plugins = {
   },
   --snippets
   {
+    'hrsh7th/cmp-vsnip'
+  },
+  {
     'hrsh7th/vim-vsnip'
   },
   {

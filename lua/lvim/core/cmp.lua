@@ -212,6 +212,7 @@ M.config = function()
       documentation = cmp.config.window.bordered(),
     },
     sources = {
+      { name = "vsnip" },
       { name = "nvim_lsp" },
       { name = "path" },
       { name = "luasnip" },
