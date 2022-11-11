@@ -64,6 +64,7 @@ local defaults = {
     ["<C-b>"] = ":Telescope buffers<CR>",
     ["<C-h>"] = ":Telescope oldfiles<CR>",
     ["<C-f>"] = ":Telescope live_grep<CR>",
+    ["<C-a>"] = ":Telescope lsp_references<CR>",
     ["<TAB>"] = ":BufferLineCyclePrev<CR>",
     ["<S-TAB>"] = ":BufferLineCycleNext<CR>",
     -- Better window movement

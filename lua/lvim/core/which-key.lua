@@ -86,6 +86,7 @@ M.config = function()
       ["c"] = { "<cmd>BufferKill<CR>", "Close Buffer" },
       ["f"] = { require("lvim.core.telescope.custom-finders").find_project_files, "Find File" },
       ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
+      ["o"] = { "<cmd>AerialToggle<CR>", "No Highlight" },
       b = {
         name = "Buffers",
         a = { "<cmd>Telescope vim_bookmarks all<cr>", "显示所有书签" },

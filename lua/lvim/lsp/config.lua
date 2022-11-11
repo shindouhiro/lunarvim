@@ -95,7 +95,7 @@ return {
   buffer_mappings = {
     normal_mode = {
       ["H"] = { vim.lsp.buf.hover, "Show hover" },
-      ["gd"] = { vim.lsp.buf.definition, "Goto Definition" },
+      ["gf"] = { vim.lsp.buf.definition, "Goto Definition" },
       ["gD"] = { vim.lsp.buf.declaration, "Goto declaration" },
       ["gr"] = { vim.lsp.buf.references, "Goto references" },
       ["gI"] = { vim.lsp.buf.implementation, "Goto Implementation" },
