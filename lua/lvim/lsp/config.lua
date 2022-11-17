@@ -106,8 +106,8 @@ return {
         end,
         "Peek definition",
       },
-      [";j"] = { vim.diagnostic.goto_next },
-      [";k"] = { vim.diagnostic.goto_prev },
+      -- [";j"] = { vim.diagnostic.goto_next },
+      -- [";k"] = { vim.diagnostic.goto_prev },
 
       ["gl"] = {
         function()

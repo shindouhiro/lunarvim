@@ -219,7 +219,6 @@ local core_plugins = {
     end,
     disable = not lvim.builtin.dap.active,
   },
-
   -- Debugger management
   {
     "Pocco81/dap-buddy.nvim",
@@ -304,6 +303,20 @@ local core_plugins = {
     'hrsh7th/vim-vsnip-integ'
   },
   --
+  {
+    "glepnir/lspsaga.nvim",
+    branch = "main",
+    config = function()
+      local saga = require("lspsaga")
+
+      saga.init_lsp_saga({
+        -- your configuration
+      })
+    end,
+  },
+  {
+    "stevearc/aerial.nvim"
+  }
 
 }
 
